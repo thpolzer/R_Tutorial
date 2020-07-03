@@ -1,5 +1,3 @@
-setwd("/home/ubuntu/R_Tutorial")
-
 #### 1. Load csv file from filesystem ####
 # Pls keep in mind:
 #   Use read.csv when Comma is default separator and dot is used for decimals
