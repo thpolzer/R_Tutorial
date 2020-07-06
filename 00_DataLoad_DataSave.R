@@ -4,6 +4,7 @@
 #   Use read.csv2 when Semicolon is default separator and Comma is used for decimals
 cardata1 <- read.csv("testdata/01_car1.csv",header=TRUE)
 cardata2 <- read.csv2("testdata/02_car1.csv",header=TRUE)
+householddata <- read.csv("testdata/03_household_data.csv",header=TRUE)
 
 #### 2. Load table from database ####
 # in this example we'll be using MySQL database
@@ -50,7 +51,8 @@ source("workspacedata/cardata_objects.R")
 # with numeric data, one can often lose precision when converting to and from a textual format, so it’s better to stick 
 # with a binary format.
 # 3.2.1 saving and loading one single object: Use save() function, use ".rda" extension for the file
-save(cardata1,cardata2, file = "workspacedata/cardata_binaryFormat.rda")
+save(cardata1,cardata2,file = "workspacedata/cardata_binaryFormat.rda")
+save(householddata,file = "workspacedata/householddata.rda")
 # if you want to load this data into your new workspace load it with load() function
 rm(list=ls()) # clear workspace to see the effect in the next command
 load("workspacedata/cardata_binaryFormat.rda") # workspace is back again
