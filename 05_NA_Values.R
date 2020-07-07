@@ -55,3 +55,5 @@ colSums(is.na(testdata))
 # to dataframe that comes without this Ozone column
 analysisData <- na.omit(testdata[,-1])
 nrow(analysisData)
+
+rm(list=ls())
