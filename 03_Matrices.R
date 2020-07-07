@@ -70,6 +70,12 @@ M4 <- rbind(c(1,91122.10,1,0),M4)
 M4 <- rbind(M4, c(2,111226,2,2))
 rm(M1,M2,M3)
 
+# 4.3 Filtering
+# When it comes to matrices filtering aims to retrieve all rows that match a certain criteria.
+# This can be done using the following syntax:
+househoulds_with_more_than_one_person <- M4[(M4[,1] >1),]
+househoulds_with_more_than_one_person_that_have_a_pet  <- M4[(M4[,1] >1 & M4[,4] >0),]
+
 
 # 5. Matrix Operations
 M1 <- matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3)
