@@ -93,6 +93,14 @@ my_subset <- subset(df4, subset = age >= 50)
 #     After this the new column is appended using $ sign
 location <- c('Germany', 'France', 'Spain', 'Italy')
 df2$location <- location
+#     Alternatively, a column can be added with the cbind() function
+#     Therefore another df is created and then appended
+regions <- data.frame(
+  region = c("Hessen","Bretagne","Costa Brava","Tuscany"),
+  stringsAsFactors = FALSE
+)
+df2 <- cbind(df2,regions)
+
 # 5.2 inserting a row
 #     To add more rows permanently to an existing data frame, we need to bring 
 #     in the new rows in the same structure as the existing data frame and use 
