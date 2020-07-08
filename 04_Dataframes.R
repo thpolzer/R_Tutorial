@@ -136,5 +136,10 @@ df4[1,'age'] <- 18
 #    make sure the length of the input is exactly the length expected
 
 
+# 8. Splitting a dataframe
+# you can split your dataframe into multiple dataframes partitioned by a factor attribute
+# result type is a ist of dataframes
+listOfsplittedDataframe <- split(df5,df5$brand)
 
+rm(list=ls())
 

@@ -1,0 +1,7 @@
+sample.interval=20000
+"strsplit" ".rs.resolveObjectFromFunctionCall" ".rs.getCompletionsArgument" ".rs.getCompletionsFunction" ".rs.appendCompletions" ".rs.getRCompletions" ".rs.appendCompletions" "<Anonymous>" 
+"tolower" "nchar" ".rs.startsWith" ".rs.fuzzyMatches" ".rs.getCompletionsSearchPath" "Reduce" "<Anonymous>" 
+"ls" "FUN" "lapply" ".rs.objectsOnSearchPath" ".rs.getCompletionsSearchPath" "Reduce" "<Anonymous>" 
+"gsub" ".rs.fuzzyMatches" ".rs.getCompletionsSearchPath" "Reduce" "<Anonymous>" 
+"ls" "FUN" "lapply" ".rs.objectsOnSearchPath" ".rs.getCompletionsSearchPath" "Reduce" "<Anonymous>" 
+"gsub" ".rs.fuzzyMatches" ".rs.getCompletionsSearchPath" "Reduce" "<Anonymous>" 
