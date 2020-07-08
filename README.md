@@ -10,6 +10,8 @@ This has been done in the ~/.Rprofile file. So pls copy this .Rprofile file into
 In order to reproduce the entire content of this tutorial you need to make sure that a MySQL database is running on your system.
 Also, to interact with the MySQL database mentioned above, the following R package needs be installed using the following command: install.packages("RMySQL")
 
+In some lectures we will be covering somewhat advanced topics (e.g. 06_Functions.R) such "first order objects". However, these aspects are very useful to get a deep understanding of the R programming language.
+
 
 
 

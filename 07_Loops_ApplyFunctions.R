@@ -74,7 +74,6 @@ res_sapply <- sapply(unlist(l),function(x){
 })
 # The difference is that sapply converts the result into a one-dimensional vector which is often more handy.
 
-
 # 4.3 split (dataframe)
 # see point 8 in the 04_Dataframes.R file within this tutorial
 partitionedCardata <- split(cardata1,cardata1$brand)
@@ -85,3 +84,6 @@ maxSalaryPerBrand1 <- lapply(partitionedCardata,function(x){
 maxSalaryPerBrand2 <- sapply(partitionedCardata,function(x){
   max(x$salary)
 })
+# This sequence of operations is sometimes referred to as “map-reduce” in other contexts.
+
+rm(list=ls())
