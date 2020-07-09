@@ -23,19 +23,25 @@ while (i < length(b)+1) {
   i = i+1
 }
 
-# 3. repeat Loops
+# 3. ifelse()
+# ifelse() is a very powerful function as it is VECTORIZED!!! It helps you a lot, to speed up your code.
+# Use it whenever you can and try to avoid loops such as those in 1. or 2. whenever you can
+example <- round(rnorm (20,50,20),0)
+ifelse(example %% 2 == 0,example+20000,example-1000)
+
+# 4. repeat Loops
 # repeat Loops are possible, too
 # however, there is no real need for that so this will not be covered in this tutorial
 
 
-# 4. Loop-functions
+# 5. Loop-functions
 # In R loop functions have been implemented in the various forms of apply() functions.
 # Pls note: In contrast to many contradictory rumours apply() functions ARE IN GENERAL NOT FASTER than any other loops.
 # The reason to use them is
 # -> CLARITY and
 # -> NO SIDE EFFECTS
 
-# 4.1 lapply()
+# 5.1 lapply()
 # The lapply() function does the following simple series of operations:
 # 1. it loops over a list, iterating over each element in that list
 # 2. it applies a function to each element of the list (a function that you specify)
@@ -55,7 +61,7 @@ f <- function(x){
 # If you place a function as an argument into another function you do not need any parentheses:
 res1 <- lapply(a,f)
 
-# 4.2 sapply()
+# 5.2 sapply()
 # The sapply() function behaves similarly to lapply(); the only real difference is in the return value.
 # sapply() will try to simplify the result of lapply() if possible. Essentially, sapply() calls lapply()
 # on its input and then applies the following algorithm:
@@ -74,7 +80,7 @@ res_sapply <- sapply(unlist(l),function(x){
 })
 # The difference is that sapply converts the result into a one-dimensional vector which is often more handy.
 
-# 4.3 split (dataframe)
+# 5.3 split (dataframe)
 # see point 8 in the 04_Dataframes.R file within this tutorial
 partitionedCardata <- split(cardata1,cardata1$brand)
 # split is frequently used alongside with lapply() or sapply()
@@ -86,11 +92,11 @@ maxSalaryPerBrand2 <- sapply(partitionedCardata,function(x){
 })
 # This sequence of operations is sometimes referred to as “map-reduce” in other contexts.
 
-# 4.4 apply()
+# 5.4 apply()
 # The apply() function is used to a evaluate a function (often an anonymous one) over the margins
 # of an array. It is most often used to apply a function to the rows or columns of a matrix (= two-dimensional array)
 load("workspacedata/householddata.rda")
-# The arguments to aplly() are:
+# The arguments to apply() are:
 # - X is an array
 # - MARGIN is an integer vector indicating which margins should be “retained”:
 #   1 = rows (operation on the rows of a matrix)
@@ -109,7 +115,7 @@ apply(as.matrix(householddata),c(1,2), function(x){
   ifelse(x %in% as.matrix(householddata)[,2], x+1, x-1)
 })
 
-# 4.5 tapply() and mapply()
+# 5.5 tapply() and mapply()
 # The above options exist as well, however, they are not that important and therefore not relevant for this tutorial
 # if you are interested check the documentation at https://cran.r-project.org/doc/manuals/r-release/R-intro.html
   
