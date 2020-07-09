@@ -86,4 +86,33 @@ maxSalaryPerBrand2 <- sapply(partitionedCardata,function(x){
 })
 # This sequence of operations is sometimes referred to as “map-reduce” in other contexts.
 
+# 4.4 apply()
+# The apply() function is used to a evaluate a function (often an anonymous one) over the margins
+# of an array. It is most often used to apply a function to the rows or columns of a matrix (= two-dimensional array)
+load("workspacedata/householddata.rda")
+# The arguments to aplly() are:
+# - X is an array
+# - MARGIN is an integer vector indicating which margins should be “retained”:
+#   1 = rows (operation on the rows of a matrix)
+#   2 = columns (operation on the columns of a matrix)
+#   c(1,2) = operation on all elements of a matrix
+# - FUN is a function to be applied
+# - ... is for other arguments to be passed to FUN
+apply(as.matrix(householddata),1, function(x){
+  sum(x)
+})
+# or even shorter
+apply(as.matrix(householddata),1, sum)
+apply(as.matrix(householddata),2, mean)
+# a little bit more complex :-)
+apply(as.matrix(householddata),c(1,2), function(x){
+  ifelse(x %in% as.matrix(householddata)[,2], x+1, x-1)
+})
+
+# 4.5 tapply() and mapply()
+# The above options exist as well, however, they are not that important and therefore not relevant for this tutorial
+# if you are interested check the documentation at https://cran.r-project.org/doc/manuals/r-release/R-intro.html
+  
+  
+
 rm(list=ls())
