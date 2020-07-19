@@ -140,6 +140,10 @@ df4[1,'age'] <- 18
 # you can split your dataframe into multiple dataframes partitioned by a factor attribute
 # result type is a ist of dataframes
 listOfsplittedDataframe <- split(df5,df5$brand)
-
 rm(list=ls())
+
+# 9. Sorting a dataframe by atrribute(s)
+load("workspacedata/cardata_binaryFormat.rda")
+sortedByAge <- cardata2[order(cardata2$age),]
+sortedbyAgeAndPrice <- cardata2[order(cardata2$age,cardata2$price),]
 
