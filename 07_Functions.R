@@ -9,7 +9,7 @@ f
 # also, pls note: The return type of a function is always an object, it can be a function, too:
 g <- function(a,b,c) return (a(b,c))
 g(f,5,6)
-# return() does not need to be explicitely called. If it the call lacks, the last value within the function body will be returned-
+# return() does not need to be explicitly called. If it the call lacks, the last value within the function body will be returned-
 h <- function(x,y) x + y
 h(1,2)
 # if you want to return more than one variable place them into a list or another container
@@ -48,7 +48,7 @@ print(z(200))
 print(z(200,1))
 
 # 3.2 Lazy Evaluation
-# If an arguments is not used in the function body you can ignore it in the function call
+# If an argument is not used in the function body you can ignore it in the function call
 f <- function(a,b) return(a^2)
 f(3)
 

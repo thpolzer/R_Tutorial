@@ -81,7 +81,7 @@ res_sapply <- sapply(unlist(l),function(x){
 # The difference is that sapply converts the result into a one-dimensional vector which is often more handy.
 
 # 5.3 split (dataframe)
-# see point 8 in the 04_Dataframes.R file within this tutorial
+# see point 8 in the 05_Dataframes.R file within this tutorial
 partitionedCardata <- split(cardata1,cardata1$brand)
 # split is frequently used alongside with lapply() or sapply()
 maxSalaryPerBrand1 <- lapply(partitionedCardata,function(x){

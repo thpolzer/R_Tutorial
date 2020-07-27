@@ -45,3 +45,5 @@ set.seed(1)
 sample(1:20,3)
 
 sample(letters,10)
+
+rm(list=ls())

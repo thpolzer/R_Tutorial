@@ -1,6 +1,6 @@
 ### INTRODUCTION ###
 # Factors are used to represent categorical data and can be unordered or ordered. Factors are important in statistical
-# modeling and are treated specially by modelling functions like lm() and glm().
+# modeling and are treated specially by modeling functions like lm() and glm().
 
 # 1. Creating a factor
 # Factor objects can be created with the factor() function.
@@ -18,6 +18,8 @@ as.vector(t)
 
 # 3. Order of the levels
 # The order of the levels of a factor can be set using the levels argument to factor(). This can be
-# important in linear modelling because the first level is used as the baseline level.
+# important in linear modeling because the first level is used as the baseline level.
 orderedLevels <- factor(cardata1$brand,levels = c("Opel","Mercedes","BMW","Audi"))
+
+rm(list=ls())
 

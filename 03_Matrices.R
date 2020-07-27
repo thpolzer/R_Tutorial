@@ -34,7 +34,7 @@ simpleVector <- 1:22
 M2 <- as.matrix(simpleVector)
 
 # 2. Matrix Indexing
-# Use the bracket operator
+# Use the bracket operator (always first rows, then columns in [<rows>,<columns>] operator)
 M1[, c(1,3)] # all rows, columns 1 and 3
 M1[1:5,] # rows 1 to 5, all columns
 M1[2,3] # the element in the second row and the 3rd column
@@ -83,18 +83,21 @@ M2 <- matrix(data=c(7,8,9,10,11,12),nrow=2,ncol=3)
 M3 <- matrix(data=c(-1,-2,-3,1,2,3),nrow=3,ncol = 2)
 
 # 5.1. Matrix Addition/Subtraction
-# you can only add matrices that all havae the same dimension (# of rows x # of columns)
+# you can only add matrices that all have the same dimension (# of rows x # of columns)
+# addition/substraction is done element per element
 M_sum <- M1 + M2
 M_Sub <- M1 - M2
 
 
 # 5.2. Scalar Multiplication/Division
+# scalar multiplication or division is done for each element
 M1_scalarMult <- 3 * M1
 M2_scalarDiv <- M2/4
 
 
 # 5.3. Matrix-Vector-Multiplication
 # number of columns must be equal to the length of the vector!
+# one result is calculated for each row of the matrix
 vect <- c(1,2,3)
 M1_vectMult <- M1 %*% vect
 # example; we have the following equation: h(x) = -40 + 0.25x
@@ -106,11 +109,12 @@ result <- vals %*% c(-40,0.25)
 
 # 5.4 Matrix-Matrix-Multiplication
 # the number of columns n of the left matrix must be equal to the number of rows m of the right matrix
+# result has number of rows of left matrix and number of columns of right matrix
 M_matrixMult <- M1 %*% M3
 # example; we have the following equations: 
 # h1(x) = -40 + 0.25x
 # h1(x) = 200 + 0.1x
-# h1(x) = -150 + 0.4xrm(M1,M2)
+# h1(x) = -150 + 0.4x
 Equations <- matrix(c(-40,0.25,200,0.1,-150,0.4),nrow=2,ncol=3)
 new_result <- vals %*% Equations
 # Attention: Matrix multiplication is not communtative!!!
@@ -118,8 +122,8 @@ new_result <- vals %*% Equations
 
 
 # 5.6 Inverse
-# can only be applied for quare matrices
-# If you multiply a matrix A with its inverse A^-1 you get the identity matrix (diagonall filled with 1s, all
+# can only be applied for square matrices
+# If you multiply a matrix A with its inverse A^-1 you get the identity matrix (diagonally filled with 1s, all
 # the rest zero)
 M4 <- matrix(c(1,2,3,4),nrow = 2, ncol = 2)
 det(M4)

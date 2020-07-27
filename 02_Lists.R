@@ -19,7 +19,7 @@ names(z)
 ## 2. List Tags and Values
 # if you have assigned names within your list elements you can get its values with the $-operator
 z$firstname
-# if you want to get all values within your list use the unlist() function. If the are nested lists or vectors within your list all 
+# if you want to get all values within your list use the unlist() function. If there are nested lists or vectors within your list all 
 # values get reurned in a FLATTENED vector
 w <- unlist(x)
 # if there are different modes within all elements of the unlist() result vector, the least common denominator will be used.
@@ -53,17 +53,19 @@ class(t2) # pls note: t2 is a list as well!
 ## 4. Adding/removing list elements
 
 # 4.1 Add a list element: Multiple ways
-a[2] <- 7
-a$city <- "Bottrop"
-a[[4]] <- TRUE
-a[5:10] <- 1.3
+z[2] <- 7
+z$city <- "Bottrop"
+z[[4]] <- TRUE
+z[5:10] <- 1.3
 
 # 4.2 Remove a list element
-length(a) # 10
-a[4] <- NULL
-length(a) # 9
-a[1:5] <- NULL
-length(a) # 4
+length(z) # 10
+z[5] <- NULL
+length(z) # 9
+z[1:5] <- NULL
+length(z) # 4
 
 ## 5. Loops
 # Applying the same function to all elements of a list will be covered in detail in file 05_Lopps_Apply.R
+
+rm(list=ls())

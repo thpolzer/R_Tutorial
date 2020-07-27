@@ -37,10 +37,10 @@ testdata <- testdata[-154,]
 testdata <- testdata[,-7]
 
 # 2.2 Removing all NA values within an object = removing all relevant rows of that object
-# option 1: na.omit => returns the same obect as before (dataframe)
+# option 1: na.omit => returns the same object as before (dataframe)
 testdata1 <- na.omit(testdata)
 nrow(testdata1)
-# option 2: complete.cases() => returns the same obect as before (dataframe)
+# option 2: complete.cases() => returns the same object as before (dataframe)
 testdata2 <- testdata[complete.cases(testdata),]
 nrow(testdata2)
 # option 3 => returns a vector populated with all non-NA values of the passed object (column by column) => fits best for a vector

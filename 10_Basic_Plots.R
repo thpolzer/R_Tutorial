@@ -8,7 +8,7 @@ load("workspacedata/cardata_binaryFormat.rda")
 # will depend on the class of the object on which it is called: The same concept exists in Java (Generics) and Scala as well.
 # 1.1 The simplest plot
 # The below plot actually does not make any sense. A 2-dimensional-plot reequires x- and y-values, we only have one vector here,
-# representing the x-values. As a result, automatically takes the same vector as y-values.
+# representing the x-values. As a result, as x-values the index of the vector is taken and the presented values as y-values.
 x <- c(1,2,3)
 plot(x)
 y <- c(4,6,12)
@@ -54,7 +54,7 @@ legend(44,93000,legend="Second Table",lty=2,col="green")
 # text() function to place some text anywhere in the current graph. For example,
 text(28,90000,"Plot Example",col="brown")
 # would write the text "Plot Example" at the point (26,90000) in the graph. The first character of the string, 
-# in this case "E", would go at that point.
+# in this case "P", would go at that point.
 # IMPORTANT: The given datapoints must be within the data values!
 
 # 6. curve()

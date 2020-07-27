@@ -1,12 +1,12 @@
 ### INTRODUCTION ###
 # In R there is no such thing as a scalar. Even a single value is stored as an object, and the basic data structure for an object is a vector.
-# A variable with one single in a one-dimensional-vector.
+# A variable with one single value is a one-dimensional-vector.
 # Example:
 a <- 1.3
 # Retrieving the first element:
 show(a[1])
 length(a)
-# Each element within a vector needs come with the same data type (in R a data type is called "mode"). Data type can be checked using the 
+# Each element within a vector needs to come with the same data type (in R a data type is called "mode"). Data type can be checked using the 
 # mode() function:
 mode(a)
 # atomic modes in R (same as "primitive data types" in other languages: integer, numeric (floating-point number), character (string), 
@@ -30,7 +30,7 @@ while (i < 11){
 ## 3. Special vectors
 # 3.1 Sequence using seq(<first element included>:<last element included>)
 seq (5,8)
-# 3.2 Repetition using rep(elemet, number of repetitions)
+# 3.2 Repetition using rep(element, number of repetitions)
 rep("Thomas",12)
 
 ## 4. Arithmetic Operations
@@ -46,8 +46,8 @@ c1 * c2 # 4 10 18
 # Examples
 c3 <- c(3,2)
 c4 <- c(5,3,2)
-c3 + c4 # (3+5) (2+3) (3+2) = 8 5 4
-c3 * c4 # (3*5) (2*3) (3*2) = 15 6 4
+c3 + c4 # (3+5) (2+3) (3+2) = 8 5 5
+c3 * c4 # (3*5) (2*3) (3*2) = 15 6 6
 
 ## 5. Special functions
 # 5.1 any()
@@ -71,11 +71,13 @@ c5[c(-1,-3,-5)]
 c6 <- c(4,6,8)
 names(c6) <- c("a","b","c")
 c6["a"]
+# Note: if values of a vector have assigned names, they are still callable with its indexes, for example
+# c6["a"] will return the same result as c6[1]
 # Removing names
 names(c6) <- NULL
 
 ## 8. Converting vector to matrix
-# Sometimes it is useful to ttransform a vector into a matrix, e.g. when it comes to run the "apply" function (it expects a matrix 
+# Sometimes it is useful to transform a vector into a matrix, e.g. when it comes to run the "apply" function (it expects a matrix 
 # as an argument).
 M <- as.matrix(c6)
 

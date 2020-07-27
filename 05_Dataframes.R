@@ -38,7 +38,7 @@ Mat1 <- matrix(c(1, 5, 14, 23, 54, 9, 15, 85, 3, 42, 9, 7, 42, 87, 16), ncol=3)
 df3 <- as.data.frame(t(Mat1))
 
 # 1.3 Create a dataframe from stored data
-#     to load data from csv, take a look at 00_DataLoad_dataSave.R
+#     to load data from csv, take a look at 00_DataLoad_DataSave.R
 #     csv are automatically stored in dataframes:
 #     with "header" you can define whether the csv contains columnnames or not
 df4 <- read.csv("testdata/01_car1.csv",header=TRUE)
@@ -54,7 +54,7 @@ names(df2) <-c('ID', 'items', 'store', 'price')
 namesdf2 <- names(df2)
 
 # 2.2 rownames
-#     vector to assign new rownames needs to have exactly number of rows as elements
+#     vector to assign new rownames needs to have exactly amount of elements as df has rows
 rownames <- row.names(df2)
 row.names(df2) <- c('This','is','a','test')
 rownames <- row.names(df2)
@@ -138,7 +138,7 @@ df4[1,'age'] <- 18
 
 # 8. Splitting a dataframe
 # you can split your dataframe into multiple dataframes partitioned by a factor attribute
-# result type is a ist of dataframes
+# result type is a list of dataframes
 listOfsplittedDataframe <- split(df5,df5$brand)
 
 rm(list=ls())

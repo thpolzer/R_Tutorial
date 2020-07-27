@@ -24,11 +24,11 @@ compare <- data.frame(list(FirstOcc,AllOcc))
 names(compare) <- c(c("FirstOcc","AllOcc"))
 
 # 4. Finding values grep()
-## by default grep() returns the indices of the occurences of the search string
+## by default grep() returns the indices of the occurrences of the search string
 load("workspacedata/cardata.RData")
 grep("Opel",cardata1$brand)
 ## if you set value=TRUE you get all hits
-celebrities <- c("Thomas Müller","Brad Pitt", "Thomas Polzer","Emmanuel Macron","Udo Lindenberg")
+celebrities <- c("Thomas M?ller","Brad Pitt", "Thomas Polzer","Emmanuel Macron","Udo Lindenberg")
 grep("Thomas",celebrities, value = TRUE)
 
 # 5. Length of a string
@@ -37,17 +37,18 @@ stringLength <- nchar("Usain Bolt")
 
 # 6. Substring substr()
 ## besides the string you need to define the positions of the first and last character (each including)
+# Remember: R starts counting indices at 1
 substr("Manuel Neuer",8,12)
 
 # 7. Concatenating strings paste()
 ## if no separator has been defined an empty space will be added automatically
-paste("Thomas","Müller")
+paste("Thomas","M?ller")
 ## otherwise you need to define a separator
-paste("Thomas","Müller","Footballplayer",sep="-")
+paste("Thomas","M?ller","Footballplayer",sep="-")
 ## or no separator 
-paste("Thomas","Müller",sep="")
+paste("Thomas","M?ller",sep="")
 # equivalent
-paste0("Thomas","Müller")
+paste0("Thomas","M?ller")
 
 rm(list=ls())
 
