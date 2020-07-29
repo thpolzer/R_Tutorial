@@ -107,6 +107,10 @@ load("workspacedata/householddata.rda")
 apply(as.matrix(householddata),1, function(x){
   sum(x)
 })
+
+apply(as.matrix(householddata),1, function(x){
+  sum(x)
+})
 # or even shorter
 apply(as.matrix(householddata),1, sum)
 apply(as.matrix(householddata),2, mean)
@@ -114,6 +118,15 @@ apply(as.matrix(householddata),2, mean)
 apply(as.matrix(householddata),c(1,2), function(x){
   ifelse(x %in% as.matrix(householddata)[,2], x+1, x-1)
 })
+
+## 5.4.1 function with extra args (...):
+## the function below computes colsums of columns c1 and columns c2 for a given matrix x, multiplies the results by m
+## and returns them as a vector
+x <- matrix(c(1,2,3,4,5,6),nrow = 2)
+f <- function(x, m,n) (x*m)+n
+## in the apply function below you are passing the extra arguments m and n
+apply(x, c(1,2), f,m=2,n=3)
+
 
 # 5.5 tapply() and mapply()
 # The above options exist as well, however, they are not that important and therefore not relevant for this tutorial
