@@ -129,6 +129,24 @@ M4 <- matrix(c(1,2,3,4),nrow = 2, ncol = 2)
 det(M4)
 # if det exists you can compute the inverse
 solve(M4)
+## 5.6.1 What is the inverse of a matrix?
+## (1) a matrix inverse is defined for square matrices only (nrow = ncol)
+## (2) Let's take an example
+A = M4 #(M4 is a square matrix. hence the same applies for A)
+## for every square matrix there exists an identity matrix. The identity matrix for A is
+I <- matrix(c(1,0,0,1),nrow = 2) # pls print to take a look at it
+# So the inverse of A is the matrix A_inverse that satisfies the following condition: A_inverse %*% A = I
+## let's check
+A_inverse <- solve(A)
+TEST <- A %*% A_inverse
+ifelse(I == TEST,print("OK"),print("Oh no!"))
+## Pls keep in mind: Not every square matrix has an inverse (ex.: Bad_matrix <- matrix(c(0,0,0,0),nrow = 2) ) but most of them have
+## those matrices are called "singular" or "degenerated"
+## 5.6.2 What's the fascination of a matrix inverse?
+# They can be very useful in some data mining mining algorithms
+# in linear regression there is a method called "Normal equation" which competes with the gradient descent
+# according to this method you can compute the theta vector like this:
+# theta = solve(t(X)%*%X) %*% t(X)*y
 
 
 # 5.7 Transpose
