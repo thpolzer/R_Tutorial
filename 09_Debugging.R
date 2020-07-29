@@ -29,4 +29,4 @@ debug(mean.default)
 mean(1:10)
 
 ## 2. Leaving the browser
-# enter Q in the browser prompt or press "Stop" in RStudio browser window
+# enter Q in the browser prompt or press "Stop" in the RStudio browser window
