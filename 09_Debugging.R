@@ -27,3 +27,6 @@ f(rnorm(5,0,1))
 # Debugging is turned off by a call to undebug with the function as an argument.
 debug(mean.default)
 mean(1:10)
+
+## 2. Leaving the browser
+# enter Q in the browser prompt or press "Stop" in RStudio browser window
